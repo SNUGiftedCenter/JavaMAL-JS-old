@@ -1,14 +1,14 @@
-¾à¼Ó ¶¥ { do  H(FF=5)(hhh=5)dutC 
+ï»¿ì•½ì† ë•… { do  H(FF=5)(hhh=5)dutC 
           do  SSS U3S DSSS            } 
-¾à¼Ó ¿ì { do  C(FF=5)(ffv=5)m (hhh=5) 
+ì•½ì† ìš° { do  C(FF=5)(ffv=5)m (hhh=5) 
           do  SS St uUU 10E c[mem]LLmem        } 
-¾à¼Ó ²É { do_4  (##random)(90#) (ffv=rand(4)+1)(FF=3) M  } 
-X = ' >Cm , >CV[²É] '  ;   Y = '  0.7 : >Cm , 0.3 :  >Cm[²É]  ' 
-½×±â³ª¹«ÁØºñ  ;  ¤¡  ;  window space.gif ;  M = ' M[<<M][>>M] ' 
-Z = '>(#white)m' ;  do (ddv=15) m[(-720#)(70##)N (-90#)NLL ¿ì] 
+ì•½ì† ê½ƒ { do_4  (##random)(90#) (ffv=rand(4)+1)(FF=3) M  } 
+X = ' >Cm , >CV[ê½ƒ] '  ;   Y = '  0.7 : >Cm , 0.3 :  >Cm[ê½ƒ]  ' 
+ìŒ“ê¸°ë‚˜ë¬´ì¤€ë¹„  ;  ã„±  ;  window space.gif ;  M = ' M[<<M][>>M] ' 
+Z = '>(#white)m' ;  do (ddv=15) m[(-720#)(70##)N (-90#)NLL ìš°] 
 do  E (33##)m (-90#)cm L [ L>mY>c(#N#)m 3{>N~} [ H(hhh=5)d 
 do  (##white) [(rrv=90) mmLmo3mo3mo3momL3m RmmRmm] mLLm 
-do  ¶¥] ] [R>mY>cm3Z] X[L3{>cm~}][R3{>cm~}2Z];  ¹Ýº¹ 11 { 
+do  ë•…] ] [R>mY>cm3Z] X[L3{>cm~}][R3{>cm~}2Z];  ë°˜ë³µ 11 { 
 do  >cm[L>mY>cm][R>mY>cm2Z] X[L3{>cm~}][R3{>cm~}2Z] } 
-¤¤   ;  dd_2 on  ;   mouse 4000 , 1000 , 2  ;  Mouse 1000 , 4000 
+ã„´   ;  dd_2 on  ;   mouse 4000 , 1000 , 2  ;  Mouse 1000 , 4000 
   
