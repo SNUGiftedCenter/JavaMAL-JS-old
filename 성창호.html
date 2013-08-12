@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='ko'>
+ <head>
+  <title> L-System</title>
+  <meta charset="utf8"/>
+  <script src="Tree2.js">
+  </script>
+
+ </head>
+
+ <body>
+
+  <form name="f" id="f">
+  <p class="bold">초기문자열:
+	<input type="text" id="axiomTextInput" size="40" placeholder="Axiom"></br>
+	</p>
+	<p class="bold">문자변화규칙:
+	<input type="text" id="ruleTextInput" size="40" placeholder="Rule">( / 로 구분)</br>
+	</p>
+	<p class="bold">기본나무색상(RGB):
+	<input type="number" id="RedTextInput" size="5" placeholder="R" min="0" max="255">
+	<input type="number" id="GreenTextInput" size="5" placeholder="G" min="0" max="255">
+	<input type="number" id="BlueTextInput" size="5" placeholder="B" min="0" max="255"></br>
+	</p>
+	<p class="bold">초기각도:
+	<input type="number" id="startAngleInput" size="10" placeholder="StartAngle" min="0" max="360">
+	회전각도:<input type="number" id="angleTextInput" size="10" placeholder="Angle"min="0" max="360">
+	단계:<input type="number" id="genTextInput" size="20" placeholder="Generation" min="0" max="10">
+	<input type="button" class="testbutton" id="addButton" value="Run">
+	<input type="button" class="rebutton" id="resetButton" value="Reset"></br>
+    </p>
+	  <p>
+    <canvas id="canvas" width="600" height="600"></canvas>
+  </p>
+	<p class="bold">현재문자열:</p></br>
+	<textarea id="outcome" name="outcome" rows="10" cols="80"></textarea>
+  </form>
+ </body>
+</html>
