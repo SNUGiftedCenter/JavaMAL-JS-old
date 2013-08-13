@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-<p id="demo"></p>
-
 <script>
 var v=new Array(200);
 var a, b, t;
@@ -18,7 +16,7 @@ for (var b=0; b<=9; b++)
 		}
 	}
 }
-
+//vprint함수어떻게 호출하죠 모르겠어요
 v[0][0]={0,0,0};
 v[0][1]={0,0,1};
 v[0][2]={0,1,0};
@@ -28,11 +26,10 @@ v[0][5]={1,0,1};
 v[0][6]={1,1,0};
 v[0][7]={1,1,1};
 
-function print(){
+function vprint(){
 	for (var i=0; i<v.length; i++)
 		{
-		document.getElementByld("demo").innerHTML=print(i);
-		//document.write("v " + v[i][0] + " " + v[i][1] + " " + v[i][2] + <br>);
+		document.write("v " + v[i][0] + " " + v[i][1] + " " + v[i][2] + <br>);
 		}
 }
 
