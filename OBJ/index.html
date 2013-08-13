@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function define()
+{
+
+	var v = new Array(200);
+	for ( var i=0;i<v.length;i++ ){
+	 v[i] = new Array(15);
+	 for(var j=0;j<=14;j++){
+	  v[i][j] = new Array(4);
+	  for(var t=0;t<4;t++){
+		  v[i][j][t]=0;
+	  }
+	 }
+	}
+	var input=demo.value;
+	var i=0;
+	var flg=0;
+	var add=1;
+	var b=0;
+	var fadd=0;
+	v[1][1]=(0,1,1};
+	v[1][2]=(0,0,1};
+	v[1][3]=(1,0,1};
+	v[1][4]=(1,1,1};
+	v[1][5]=(0,1,0};
+	v[1][6]=(0,1,0};
+	v[1][7]=(1,0,0};
+	v[1][8]=(1,1,0};
+	v[1][9]={1,2,3,4};
+	v[1][10]={8,7,6,5};
+	v[1][11]={4,3,7,8};
+	v[1][12]={5,1,4,8};
+	v[1][13]={5,6,2,1};
+	v[1][14]={2,6,7,3};
+	var see=0;
+	var 
+	for(i=1;i<=input.length;i++)
+		{
+		if(input[i]=="R"){
+		
+		
+		}
+		if(input[i]=="s" && see=){
+			v[i][1][3]=v[i-1][1][3]+1;
+			v[i][2][3]=v[i-1][2][3]+1;
+			v[i][3][3]=v[i-1][3][3]+1;
+			v[i][4][3]=v[i-1][4][3]+1;
+			v[i][5][3]=v[i-1][5][3]+1;
+			v[i][6][3]=v[i-1][6][3]+1;
+			v[i][7][3]=v[i-1][7][3]+1;
+			v[i][8][3]=v[i-1][8][3]+1;
+			v[i]
+		}
+		}
+	
+
+}
+</script>
+</head>
+<body>
+
+<h1>½×±â³ª¹« -> obj</h1>
+<input type="text" id="demo"></input>
+<button onclick="define()">Change</button>
+
+
+
+</body>
+</html> 
