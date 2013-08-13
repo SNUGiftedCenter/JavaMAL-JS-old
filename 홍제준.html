@@ -22,15 +22,22 @@ function addFace(inv[]){
 }
 
 function findv(x,y,z){
-	var id=-1, founded=0, ;
-	for(var i=v.length-1; i==0; i++){ //length returns the "NUMBERS OF ELEMENTS", so reducing 1 is needed.
-		if(v[i][0]==x && v[i][1]==y && v[i][2]==z){ //FOUND! Moving Started
-			for(var j=v.length-1; j==i; j--){ //moves.
-				v[j-1][0] = v[j][0]; //LEFT: new one. RIGHT: old one.
+	var id=-1, founded=0, isfound=false;
+	
+	for(var i=0; i<v.length; i++){
+		if(v[i][0]==x && v[i][1]==y && v[i][2]==z){
+			founded++;
+			for(var j=0; j<f.length; j++){
+				for(var k=0; k<f[j].length; k++){
+					if(f[j][k]==i) 
+				}
 			}
-				
+		}
+		if(founded!=0){
+			v[j+founded][0] = v[j][0]; //LEFT: new one. RIGHT: old one.
 		}
 	}
+	
 	return id;
 }
 
