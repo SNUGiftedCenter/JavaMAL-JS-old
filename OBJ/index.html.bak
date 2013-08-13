@@ -4,38 +4,137 @@
 <script>
 function define()
 {
-
 	var v = new Array(200);
 	for ( var i=0;i<v.length;i++ ){
-	 v[i] = new Array(15);
-	 for(var j=0;j<=14;j++){
-	  v[i][j] = new Array(4);
-	  for(var t=0;t<4;t++){
-		  v[i][j][t]=0;
-	  }
+	 v[i] = new Array(3);
+	 for(var j=0;j<=2;j++){
+	  v[i][j] = 0;
 	 }
 	}
-	var input=demo.value;
-	var i=0;
-	var flg=0;
-	var add=1;
-	var b=0;
-	var fadd=0;
-	v[1][1]=(0,1,1};
-	v[1][2]=(0,0,1};
-	v[1][3]=(1,0,1};
-	v[1][4]=(1,1,1};
-	v[1][5]=(0,1,0};
-	v[1][6]=(0,1,0};
-	v[1][7]=(1,0,0};
-	v[1][8]=(1,1,0};
-	v[1][9]={1,2,3,4};
-	v[1][10]={8,7,6,5};
-	v[1][11]={4,3,7,8};
-	v[1][12]={5,1,4,8};
-	v[1][13]={5,6,2,1};
-	v[1][14]={2,6,7,3};
-	document.write(v[0][0][0]);
+	v[0]=[0,0,0];
+	var see=0;
+
+	var input=document.getElementById("demo").value;
+
+	var cube=0;
+	/**************************************************************************************************/
+	for(i=0;i<input.length;i++){
+	if(input[i]=='R'){
+	see++;
+	if(see==4){see=0;}
+	}
+	if(input[i]=='L'){
+	see++;
+	if(see==-1){see=3;}
+	}
+	if(input[i]=='s' && see==0){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][1]=v[cube-1][1]+1;
+	cube++;
+	continue;
+	}
+	if(input[i]=='s' && see==1){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][0]=v[cube-1][0]+1;
+	cube++;
+	continue;
+	}
+	if(input[i]=='s' && see==2){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][1]=v[cube-1][1]-1;
+	cube++;
+	continue;
+	}
+	if(input[i]=='s' && see==3){
+	if(cube==0){cube++; continue;}
+    v[cube][0]=v[cube][0];v[cube][1]=v[cube][1];v[cube][2]=v[cube][2];
+	v[cube][0]=v[cube-1][0]-1;
+	cube++;
+	continue;
+	}
+	if(input[i]=='l' && see==0){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][0]=v[cube-1][0]-1;
+	cube++;
+	continue;
+	}
+	if(input[i]=='l' && see==1){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][1]=v[cube-1][1]+1;
+	cube++;
+	continue;
+	}
+	if(input[i]=='l' && see==2){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][0]=v[cube-1][0]+1;
+	cube++;
+	continue;
+	}
+	if(input[i]=='l' && see==3){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][1]=v[cube-1][1]-1;
+	cube++;
+	continue;
+	}
+	if(input[i]=='r' && see==0){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][0]=v[cube-1][0]+1;
+	cube++;
+	continue;
+	}
+	if(input[i]=='r' && see==1){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][1]=v[cube-1][1]-1;
+	cube++;
+	continue;
+	}
+	if(input[i]=='r' && see==2){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][0]=v[cube-1][0]-1;
+	cube++;
+	continue;
+	}
+	if(input[i]=='r' && see==3){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][1]=v[cube-1][1]+1;
+	cube++;
+	continue;
+	}
+	if(input[i]=='u'){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][2]=v[cube-1][2]+1;
+	cube++;
+	}
+	if(input[i]=='d'){
+	if(cube==0){cube++; continue;}
+v[cube][0]=v[cube-1][0];v[cube][1]=v[cube-1][1];v[cube][2]=v[cube-1][2];
+	v[cube][2]=v[cube-1][2]-1;
+	cube++;
+	}
+	}
+	document.write(v[0]+"<br>"+v[1]+"<br>"+v[2]);
+
+
+	
+
+	
+
+
+
+
+	
 	
 
 }
