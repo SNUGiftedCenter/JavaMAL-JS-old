@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+
+<script>
+var v=new Array(200);
+var a, b, t;
+for (var a=0; a<v.length; a++)
+{
+var [a]=new Array(9);
+for (var b=0; b<=9; b++)
+	{
+	var [a][b]=new Array(4);
+	for (t=0; t<=4; t++)
+		{
+		var [a][b][t]=0;
+		}
+	}
+}
+
+v[0][0]={0,0,0};
+v[0][1]={0,0,1};
+v[0][2]={0,1,0};
+v[0][3]={0,1,1};
+v[0][4]={1,0,0};
+v[0][5]={1,0,1};
+v[0][6]={1,1,0};
+v[0][7]={1,1,1};
+
+function print(){
+	for (var i=0; i<v.length; i++)
+		{
+		document.getElementByld("demo").innerHTML=print(i);
+		//document.write("v " + v[i][0] + " " + v[i][1] + " " + v[i][2] + <br>);
+		}
+}
+
+</script>
+</body>
+</html>
