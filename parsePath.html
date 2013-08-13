@@ -23,32 +23,8 @@
 			}
 		}
 		var move = function(direction){
-			var amount;
-			if( direction == 'straight' || direction == 'up'){
-				amount = 1;
-			}
-			else if (direction == 'back' || direction == 'down'){
-				amount = -1;
-			}
-			if( direction == 'straight' || direction == 'back'){
-				switch(cd){
-				case 0:
-					cy+=amount;
-					break;
-				case 1:
-					cx+=amount;
-					break;
-				case 2:
-					cy+=amount;
-					break;
-				case 3:
-					cx+=amount;
-					break;
-				}
-			} else {
-				cz+=amount;
-			}
-		}	
+			//TODO.
+		}
 		for( var i = 0; i < command.length; i++){
 			var currentCommand = command.charAt(i);
 			if(currentCommand == 's'){
@@ -64,6 +40,12 @@
 			}
 			else if( currentCommand == 'd'){
 				move('down');
+			}
+			else if( currentCommand == 'l'){
+				move('left');
+			}
+			else if( currentCommand == 'r'){
+				move('right');
 			}
 			else if( currentCommand == 'L'){
 				turn('left');
@@ -138,7 +120,7 @@
 		}
 	}
 
-	parseCommand("sssRss");
+	parseCommand("sssss");
 	print();
 	</script>
 </body>
