@@ -1,11 +1,11 @@
-﻿var incom="do ss";
+﻿var income="do sssssss";
   
 	var i=0,j,k;
 	var dic=1;
 
 	var nx=0.5,ny=0.5,nz=0,flag=0;
 
-	var v = incom.split(" ");
+	var v = income.split(" ");
 	var dp = new Array();
 	for(i=0;i<200;i++) dp[i]=new Array();
 
