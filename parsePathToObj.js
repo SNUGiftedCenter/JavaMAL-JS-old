@@ -26,7 +26,7 @@ var addPoint = function(x,y,z) {
 	vertices[newID[1]=y;
 	vertices[newID][2]=z;
 	return newID+1;
-},
+}
 
 var addSixFaces = function (v) {
 	addFace(v[0],v[1],v[3],v[2]);
@@ -35,7 +35,7 @@ var addSixFaces = function (v) {
 	addFace(v[2],v[0],v[4],v[6]);
 	addFace(v[0],v[1],v[5],v[4]);
 	addFace(v[4],v[5],v[6],v[7]);
-},
+}
 
 var addFace = function (v1,v2,v3,v4){
 	for( var i = 0; i < faces.length; i++){
@@ -49,7 +49,6 @@ var addFace = function (v1,v2,v3,v4){
 	faces[newID][1]=v2;
 	faces[newID][2]=v3;
 	faces[newID][3]=v4;
-}
 }
 
 var print = function (){

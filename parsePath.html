@@ -5,6 +5,58 @@
 <body>
 	<p id='content'></p>
 	<script>
+	
+	var parseCommand = function(command){
+		var cx = 0, cy = 0, cz = 0, cd = 0;
+		var turn = function(direction){
+			if(direction =='left'){
+				if(cd == 0){
+					cd = 4;
+				}
+				cd--;
+			}
+			else if( direction == 'right'){
+				if( cd == 3){
+					cd = -1;
+				}
+				cd++;
+			}
+		}
+		var move = function(direction){
+			//TODO.
+		}
+		for( var i = 0; i < command.length; i++){
+			var currentCommand = command.charAt(i);
+			if(currentCommand == 's'){
+				if(i != 0 ){
+					move('straight');
+				}
+			}
+			else if( currentCommand == 'b'){
+				move('back');
+			}
+			else if( currentCommand == 'u'){
+				move('up');
+			}
+			else if( currentCommand == 'd'){
+				move('down');
+			}
+			else if( currentCommand == 'l'){
+				move('left');
+			}
+			else if( currentCommand == 'r'){
+				move('right');
+			}
+			else if( currentCommand == 'L'){
+				turn('left');
+			}
+			else if( currentCommand == 'R'){
+				turn('right');
+			}
+			drawCube(cx,cy,cz);
+		}
+	}
+	
 	var vertices = new Array();
 	var faces = new Array();
 
@@ -68,7 +120,7 @@
 		}
 	}
 
-	drawCube(0,0,0);
+	parseCommand("sssss");
 	print();
 	</script>
 </body>
