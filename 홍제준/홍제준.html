@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var v = new Array();
+var dest = new Array();
+var tempv = new Array(); //USED ONLY IN addPoint() !!!!!!
+
+function addPoint(x,y,z){
+	
+	var targetid; //integer return : ID of target vertice (x, y, z)
+	
+	v[v.length]=new Array(x,y,z);
+	
+	
+	return targetid;
+}
+
+function addFace(inv[]){
+	
+	f[f.length]=new Array(inv[0], inv[1], inv[2], inv[3]);
+}
+
+function findv(x,y,z){
+	var id=-1, founded=0, isfound=false;
+	
+	for(var i=0; i<v.length; i++){
+		if(v[i][0]==x && v[i][1]==y && v[i][2]==z){
+			founded++;
+			for(var j=0; j<f.length; j++){
+				for(var k=0; k<f[j].length; k++){
+					if(f[j][k]==i) 
+				}
+			}
+		}
+		if(founded!=0){
+			v[j+founded][0] = v[j][0]; //LEFT: new one. RIGHT: old one.
+		}
+	}
+	
+	return id;
+}
+
+</script>
+</head>
+<body>
+<h1>test</h1>
+<button onclick="addPoint()">Go</button>
+</form>
+
+
+</body>
+</html> 

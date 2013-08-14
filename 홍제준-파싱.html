@@ -1,0 +1,92 @@
+﻿<html>
+<head>
+	<title>Test</title>
+	<!--
+	<script src="parsing.js">
+	-->
+	</script>
+</head>
+<body>
+	<p>명령어입력:</p>
+
+	<textarea id="income" name="income" rows="10" cols="80"></textarea></br>
+	<input type = "button" value = "입력" onclick=gobuttonClick();>
+	
+	
+	
+	<script>
+	
+	var 
+
+	 cmd			//original code						     구|ocode
+	,cmdlin			//라인별로 자른 코드 (Command 'LINE'D!!)		|
+	,cmdlintmp		//각 문자열을 정규표현식으로 변환(공백제거)
+	,reccmdtmp		// =를 기준으로 치환문자와 그 치환문자의 명령어를 구분
+	,cmdex			//최종 파싱 전 치환전 코드
+	,cmdfin			//최종 파싱한 코드 final code					|
+
+	,recchar = []	//치환문자 저장 (recursion Character)		|
+	,reccmd = []	//치환문자의 명령어							|
+	,reccmdcnt = 0	//치환문자의 개수							|
+	,recnum =0		//치환반복 횟수
+	,idxrec = -1	//치환 명령의 index							|
+	,idxdo = -1		//DO 명령의 index							|
+	;
+
+	var print=document.getElementById("output");
+
+
+	//버튼 클릭---시작!!!
+	function gobuttonClick(){ 
+		cmd = document.getElementById("income").value;
+		cmdlin = cmd.split("\n");
+		//print.innerHTML = cmdlin;
+		
+		
+		
+		
+		var i,j;
+		for(i=0;i<cmdlin.length;i++){ //줄 수 : 이 for문은 재귀를 처리하기 위한 것입니다--------------------------------------------
+			
+			//치환 문자열이 존재한다면
+			if(cmdlin[i].indexOf("=")>=0){
+				cmdlintmp = cmdlin[i].value.replace(/\s/g,"");		//각 문자열을 정규표현식으로 변환(공백제거)
+				reccmdtmp = cmdlintmp.split("=");					// =를 기준으로 치환문자와 그 치환문자의 명령어를 구분
+				recchar[reccmdcnt] = reccmdtmp[0];					//"치환할 문자" 저장 (치환명령 0번째 글자에 있음)
+				reccmd[reccmdcnt] = reccmdtmp[1];					//"치환할 문자열" 저장 (치환명령 3번째 글자부터 있음)
+				reccmdcnt++;										//치환할 다른 문자 탐색 - 치환문자가 2개이상
+				
+				//rec~~~[reccmdcnt]는 reccmdcnt번째의 치환문자에 해당합니다.
+			}
+			
+			if(cmdlin[i].indexOf("do")>=0){							//do 문자열이 존재한다면
+				//치환이 필요한 do라면
+				if(cmdlin[i][2]=='_'){		//do 명령문에서 반복을 하는지 판별
+					var reccmddo = cmdlin[i].split(" ");
+					cmdex = reccmddo[1];	//명령을 저장
+					var reccmddotemp = reccmddo[0].split("_");  //'_(언더바)' 앞쪽은 (reccmddotemp[0]) 반복수, 뒤쪽은 명령!! 
+					recnum = reccmddotemp[1]; //반복실행명령횟수설정
+				}
+				
+				for(j=0; j<cmdex.length; j++){
+					for(var k=0; k<cmdex.length; k++){
+						cmdex[k] = replace(recchar[indexOf(cmdex[k])],reccmd[indexOf(indexOf(cmdex[k]))]); //치환문자 => 문자열로!!!
+					}
+					
+					recnum--; //do_n의 n을 감소시키고
+					//n이 0일경우 일반 do가 되어 좌표계산으로 이동한다
+					if(recnum==0) break;
+				}
+			}
+		}//재귀용 for----------------------------------------------------------------------------------------------------
+		
+		print.innerHTML = cmdex;
+	}
+	
+	</script>
+	
+	
+	
+	<p id="output"></p>
+</body>
+</html>
