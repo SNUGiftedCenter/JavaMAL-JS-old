@@ -103,12 +103,12 @@ var addPoint = function(x,y,z) {
 }
 
 var addSixFaces = function (v) {
-	addFace(v[0],v[1],v[3],v[2]);
-	addFace(v[1],v[3],v[7],v[5]);
-	addFace(v[3],v[2],v[6],v[7]);
-	addFace(v[2],v[0],v[4],v[6]);
-	addFace(v[0],v[1],v[5],v[4]);
-	addFace(v[4],v[5],v[7],v[6]);
+	addFace(v[2],v[0],v[1],v[3]);
+	addFace(v[3],v[7],v[5],v[1]);
+	addFace(v[2],v[6],v[7],v[3]);
+	addFace(v[0],v[4],v[6],v[2]);
+	addFace(v[1],v[5],v[4],v[0]);
+	addFace(v[6],v[4],v[5],v[7]);
 }
 
 var addFace = function (v1,v2,v3,v4){
