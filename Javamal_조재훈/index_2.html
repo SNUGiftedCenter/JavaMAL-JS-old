@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<script src="buttonEvent.js"></script>
+<title>JavaMal</title>
+<style>
+
+body {background-color:#2a2a2a;}
+h1 {color:#33b5e5; text-align:center; font-size:20px;}
+
+a:link {text-decoration: none; color: #ffffff;}
+a:visited {text-decoration: none; color: #fafafa;}
+a:active {text-decoration: none; color: #ff4444;}
+a:hover {text-decotation: none; color: #ff4444;}
+
+#tS_mCnns_bStrBlue_fT	{color:#ff5555; font-size:20px; font-weight:bold; font-align:center;}
+#tS_mCnns_norWhite		{color:#ffffff; font-size:12px;}
+#tS_mCnns_strBlue		{color:#ff5555; font-size:12px; font-weight:bold}
+#tS_mCnns_bLStrBlue		{color:#ff4444; font-size:15px; font-weight:bold}
+#tS_Copyright			{color:#888888; font-size:11px;                   font-align:center;}
+#tS_forPostTitle		{background-color:#ff4444; color:#ffffff; font-size:20px; font-weight:bold;}
+
+#mainTitle				{width:800px; background-color:#2a2a2a; padding:20px; float:left; height:60px;}
+#mainContentsBg			{width:580px; background-color:#666666; padding:20px; float:left;}
+#subContentsBg			{width:180px; background-color:#2a2a2a; padding:10px; float:left;}
+#gapBitMCnSC			{width:20px;                                          float:left;}
+#botMainTitle			{width:135px; background-color:#ff4444; padding:10px; float:left; height:20px;}
+
+img						{font-align:center;}
+
+#circleBtn				{width:50px, height:50px, border-radius:50px; color:#ff4444;}
+
+</style>
+
+</head>
+
+<!-- body  body body  body body  body body  body body  body body  body body  body body  body body  body  body  body  body  body  body  body  body  body  body  body  body  body  -->
+<body>
+
+<div id="mainTitle">
+<p id="tS_mCnns_bStrBlue_fT"><img src="imgFiles/Logo(2).png" width="190" height="30" alt="Javamal"></p>
+</div>
+
+<br><br><br><br>
+<div id="mainContentsBg">
+<p id="tS_forPostTitle"><br>자바말 명령하기</p>
+<div style="width:570px; margin:auto; position:relative; font-size: 9pt; color: #666666;">
+	 <canvas id="cv" style="border: 1px solid;" width="570" height="400" ></canvas></div>
+<!--[if !IE]><!-->
+	 <script type="text/javascript" src="jsc3d.js"></script>
+	<!--<![endif]-->
+	<!--[if IE]>
+	 <script type="text/javascript" src="../jsc3d_ie.js"></script>
+	 <script type="text/javascript">
+	  JSC3D.Texture.cv = document.getElementById('tex');
+	 </script>
+	<![endif]-->
+<textarea rows="5" cols="100" name="mainSource" style='padding:3px;width:98%'>여기에 거북명령 입력</textarea>
+<br><br>
+<script type="text/javascript">
+	var canvas;
+	var viewer;
+	var logoTimerID = 0;
+	function init() {
+		 
+		canvas = document.getElementById('cv');
+		viewer = new JSC3D.Viewer(canvas);
+		viewer.setParameter('SceneUrl', 'models/1.obj');
+		viewer.setParameter('InitRotationX', 20);
+		viewer.setParameter('InitRotationY', 20);
+		viewer.setParameter('InitRotationZ', 0);
+		viewer.setParameter('ModelColor', '#ff4444');
+		viewer.setParameter('BackgroundColor1', '#666666');
+		viewer.setParameter('BackgroundColor2', '#565656');
+		viewer.setParameter('Definition', 'standard');
+		viewer.setParameter('SphereMapUrl', 'models/chrome.jpg');
+		viewer.init();
+		viewer.update();
+	}
+	function reset(){
+		viewer.replaceSceneFromUrl('models/reset.obj');
+		viewer.update();
+	}
+  </script>
+<form>
+<input type="button" id="Button_run" value="   실 행   " onClick="init();">
+</form>
+</div>
+<div id="gapBitMCnSC">
+<p> </p>
+</div>
+
+<div id="subContentsBg">																<!-- 여기부터 옆에 있는 탭에 내용 추가 -->
+<div id="botMainTitle">
+<p id="tS_mCnns_norWhite"><a href="http://www.javamath.com/class/index.cgi?house=gifted" target="_top">거북명령실습실로 이동</a></p>
+</div>
+<div id="botMainTitle">
+<p id="tS_mCnns_norWhite"> </p>													<!-- 여기에 새로운 메뉴를 추가할 수 있음 -->
+</div><div id="botMainTitle">
+<p id="tS_mCnns_norWhite"> </p>													<!-- 여기에 새로운 메뉴를 추가할 수 있음 -->
+</div><div id="botMainTitle">
+<p id="tS_mCnns_norWhite"> </p>													<!-- 여기에 새로운 메뉴를 추가할 수 있음 -->
+</div>
+<br><br><br>
+<br><br><br>
+<br><br><br>
+
+<p id="tS_mCnns_bLStrBlue">JavaMal<br>Update Log</p>
+<p id="tS_mCnns_norWhite">
+First Release(beta)<br><br>
+</p>
+<p id="tS_mCnns_bLStrBlue">Known Issues</p>
+<p id="tS_mCnns_norWhite">
+[Unresolved] 고화질 디스플레이에서 일정 이상의 해상도에서 타이틀 아이콘이 왼쪽으로 이동하는 현상 발견<br><br>
+</p>
+<p id="tS_Copyright"><br>2013.8.14 (수) 업데이트됨</p>
+<br><br>
+<div style="height:2px; border-bottom:1px solid #888888"></div>
+<p id ="tS_Copyright">
+서울대학교 과학영재교육원<br>
+정보영재 사사반 제작<br>
+</p>
+</div>																					<!-- 여기까지 옆에 있는 탭에 내용 추가 -->
+
+<script>
+function mainFunc()																		// 여기에 메인 소스 입력
+{
+    alert("스크립트가 비어 있습니다.");
+}
+</script>
+
+</body>
+<!-- body  body body  body body  body body  body body  body body  body body  body body  body body  body  body  body  body  body  body  body  body  body  body  body  body  body  -->
+</html>
