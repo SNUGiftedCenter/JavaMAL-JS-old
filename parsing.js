@@ -1,19 +1,11 @@
 ﻿var ocode,lcode,lcnt;
-var i,j,k;
-var cletter = [];	//치환문자 저장
-var fcode = [];		//최종 파싱한 코드
-var crule = [], ccnt = 0;	//치환문자의 명령어, 치환문자의 개수
-
-function gobuttonClick(){
-	ocode = document.getElementById("income").value;
-	lcode = ocode.split("\n");
-	lcnt = lcode.length;
-//	document.write(lcode+"<br>");
-//	document.write(lcnt+"<br>");
-	parsing();
-}
 
 function parsing(){
+	var i,j,k;
+	var cletter = [];	//치환문자 저장
+	var fcode = "";		//최종 파싱한 코드
+	var crule = [], ccnt = 0;	//치환문자의 명령어, 치환문자의 개수
+	
 	var rcode = [];
 	for(i=0;i<1000;i++) rcode[i] = [];
 	var zcnt=0;
@@ -154,5 +146,5 @@ function parsing(){
 			}
 		}
 	}
-	document.getElementById("output").innerHTML = fcode;
+	return fcode;
 }

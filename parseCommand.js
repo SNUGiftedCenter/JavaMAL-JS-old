@@ -125,10 +125,6 @@ var addFace = function (v1,v2,v3,v4){
 	faces[newID][3]=v4;
 }
 
-var init = function() {
-	vertices = new Array();
-	faces = new Array();
-}
 var print = function (){
 	document.getElementById('content').innerHTML = "";
 	for(var i = 0; i < vertices.length; i++){

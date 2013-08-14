@@ -1,15 +1,8 @@
-var run = function(){
-	var income = document.inputform.income.value;
-	init();
-	parseCommand(income);
-	print();
-}
-
 var canvas;
 var viewer;
 var logoTimerID = 0;
-function init() {
 
+function init() {
 	canvas = document.getElementById('cv');
 	viewer = new JSC3D.Viewer(canvas);
 	viewer.setParameter('SceneUrl', 'models/1.obj');
@@ -23,6 +16,16 @@ function init() {
 	viewer.setParameter('SphereMapUrl', 'models/chrome.jpg');
 	viewer.init();
 	viewer.update();
+	
+	ocode = document.inputform.income.value;
+	lcode = ocode.split("\n");
+	lcnt = lcode.length;
+	var income = parsing();
+	
+	vertices = new Array();
+	faces = new Array();
+	
+	parseCommand(income);
 }
 function reset(){
 	viewer.replaceSceneFromUrl('models/reset.obj');
