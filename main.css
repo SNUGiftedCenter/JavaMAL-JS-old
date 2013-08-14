@@ -1,0 +1,24 @@
+body {background-color:#2a2a2a;}
+h1 {color:#33b5e5; text-align:center; font-size:20px;}
+
+a:link {text-decoration: none; color: #ffffff;}
+a:visited {text-decoration: none; color: #fafafa;}
+a:active {text-decoration: none; color: #ff4444;}
+a:hover {text-decotation: none; color: #ff4444;}
+
+#tS_mCnns_bStrBlue_fT	{color:#ff5555; font-size:20px; font-weight:bold; font-align:center;}
+#tS_mCnns_norWhite		{color:#ffffff; font-size:12px;}
+#tS_mCnns_strBlue		{color:#ff5555; font-size:12px; font-weight:bold}
+#tS_mCnns_bLStrBlue		{color:#ff4444; font-size:15px; font-weight:bold}
+#tS_Copyright			{color:#888888; font-size:11px;                   font-align:center;}
+#tS_forPostTitle		{background-color:#ff4444; color:#ffffff; font-size:20px; font-weight:bold;}
+
+#mainTitle				{width:800px; background-color:#2a2a2a; padding:20px; float:left; height:60px;}
+#mainContentsBg			{width:580px; background-color:#666666; padding:20px; float:left;}
+#subContentsBg			{width:180px; background-color:#2a2a2a; padding:10px; float:left;}
+#gapBitMCnSC			{width:20px;                                          float:left;}
+#botMainTitle			{width:135px; background-color:#ff4444; padding:10px; float:left; height:20px;}
+
+img						{font-align:center;}
+
+#circleBtn				{width:50px, height:50px, border-radius:50px; color:#ff4444;}
