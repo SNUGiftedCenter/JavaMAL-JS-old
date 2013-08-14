@@ -33,10 +33,10 @@ var parseCommand = function(command){
 				cx+=amount;
 				break;
 			case 2:
-				cy-=amount;
+				cy+=amount;
 				break;
 			case 3:
-				cx-=amount;
+				cx+=amount;
 				break;
 			}
 		} else {
