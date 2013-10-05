@@ -1,9 +1,7 @@
 /*	Copyright (c) Jaeyeun Yoon 2013
 	Apache Licence 2.0 */
-
-var parseCommand = function(command, size){
+var parseCommand = function(command){
 	var cx = 0, cy = 0, cz = 0, cd = 0;
-	var size = 1;
 	var turn = function(direction){
 		if(direction =='left'){
 			if(cd == 0){
@@ -15,7 +13,7 @@ var parseCommand = function(command, size){
 			if( cd == 3){
 				cd = -1;
 			}
-			cd++;	
+			cd++;
 		}
 	}
 	var move = function(direction){
@@ -51,19 +49,19 @@ var parseCommand = function(command, size){
 			if(i != 0 ){
 				move('straight');
 			}
-			drawCube(cx,cy,cz,size);
+			drawCube(cx,cy,cz);
 		}
 		else if( currentCommand == 'b'){
 			move('back');
-			drawCube(cx,cy,cz,size);
+			drawCube(cx,cy,cz);
 		}
 		else if( currentCommand == 'u'){
 			move('up');
-			drawCube(cx,cy,cz,size);
+			drawCube(cx,cy,cz);
 		}
 		else if( currentCommand == 'd'){
 			move('down');
-			drawCube(cx,cy,cz,size);
+			drawCube(cx,cy,cz);
 		}
 		else if( currentCommand == 'L'){
 			turn('left');
@@ -74,19 +72,19 @@ var parseCommand = function(command, size){
 	}
 }
 
-var vertices = new Array();
-var faces= new Array();
+var vertices;
+var faces;
 
-var drawCube = function(x, y, z, size){
+var drawCube = function(x, y, z){
 	var v = new Array();
-	v[0] = addPoint(x+size,y+size,z);
-	v[1] = addPoint(x+size,y-size,z);
-	v[2] = addPoint(x-size,y+size,z);
-	v[3] = addPoint(x-size,y-size,z);
-	v[4] = addPoint(x+size,y+size,z+2*size);
-	v[5] = addPoint(x+size,y-size,z+2*size);
-	v[6] = addPoint(x-size,y+size,z+2*size);
-	v[7] = addPoint(x-size,y-size,z+2*size);
+	v[0] = addPoint(x+0.5,y+0.5,z);
+	v[1] = addPoint(x+0.5,y-0.5,z);
+	v[2] = addPoint(x-0.5,y+0.5,z);
+	v[3] = addPoint(x-0.5,y-0.5,z);
+	v[4] = addPoint(x+0.5,y+0.5,z+1);
+	v[5] = addPoint(x+0.5,y-0.5,z+1);
+	v[6] = addPoint(x-0.5,y+0.5,z+1);
+	v[7] = addPoint(x-0.5,y-0.5,z+1);
 	addSixFaces(v);
 }
 
